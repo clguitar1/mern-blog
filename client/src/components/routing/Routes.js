@@ -4,7 +4,7 @@ import Login from '../auth/Login';
 import Register from '../auth/Register';
 import Alert from '../layout/Alert';
 import Dashboard from '../dashboard/Dashboard';
-import PrivateRoute from '../routing/PrivateRoute';
+import PrivateRoute from './PrivateRoute';
 import CreateProfile from '../profile-forms/CreateProfile';
 import EditProfile from '../profile-forms/EditProfile';
 import Profiles from '../profiles/Profiles';

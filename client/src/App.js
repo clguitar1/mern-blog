@@ -12,12 +12,15 @@ import store from './store';
 import { loadUser } from './actions/auth.actions';
 import setAuthToken from './utils/setAuthToken';
 
-// // check for token in localStorage
-// if (localStorage.token) {
-//   setAuthToken(localStorage.token);
-// }
+// check for token in localStorage
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 function App() {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  });
   return (
     <div className='App'>
       <Provider store={store}>

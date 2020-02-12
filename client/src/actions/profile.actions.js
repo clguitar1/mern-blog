@@ -119,6 +119,12 @@ export const createProfile = (
       payload: { msg: error.response.statusText, status: error.response.status }
     });
   }
+
+  // if (edit) {
+  //   console.log(id);
+  //   console.log(edit);
+  //   history.push(`/profile/${id}`);
+  // }
 };
 
 // Add Experience

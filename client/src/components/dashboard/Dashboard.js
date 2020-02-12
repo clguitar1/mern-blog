@@ -32,7 +32,7 @@ const Dashboard = ({
       </p>
       {profile !== null ? (
         <Fragment>
-          <DashboardActions />
+          <DashboardActions profile={profile} />
 
           <div className='my-2'>
             <Button className='btn btn-danger' onClick={() => deleteAccount()}>

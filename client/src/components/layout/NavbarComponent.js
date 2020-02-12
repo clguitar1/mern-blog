@@ -22,7 +22,7 @@ const NavbarComponent = ({ auth: { isAuthenticated, loading }, logout }) => {
     <Nav className='ml-auto mr-4' navbar>
       <NavItem>
         <NavLink tag={RRNavLink} exact to='/profiles'>
-          Developer Profiles
+          User Profiles
         </NavLink>
       </NavItem>
       <NavItem>
