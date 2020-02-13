@@ -12,9 +12,9 @@ const ProfileTop = ({
   }
 }) => {
   return (
-    <div className='ProfileTop bg-info p-4'>
+    <div className='ProfileTop bg-info p-4 text-center'>
       <img className='rounded-circle my-1' src={avatar} alt='' />
-      <h1 className='large'>{name}</h1>
+      <h1 className='text-white'>{name}</h1>
       <p className='lead'>
         {status} {company && <span> at {company}</span>}
       </p>

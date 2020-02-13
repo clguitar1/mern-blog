@@ -9,19 +9,19 @@ const Landing = ({ isAuthenticated, user }) => {
   }
   console.log('the user is: ' + user);
   return (
-    <div className='Landing container'>
-      <div className='dark-overlay'>
-        <div className='landing-inner'>
-          <h1 className='x-large'>Blog App</h1>
+    <div className='Landing'>
+      <div className='Landing-inner p-4'>
+        <div className='Landing-secondary-inner text-center'>
+          <h1 className='x-large'>Welcome to Blog App</h1>
           <p className='lead'>
             Create a profile, share posts with your friends
           </p>
-          <div className='buttons'>
-            <Link to='/register' className='btn btn-info mr-2'>
-              Sign Up
-            </Link>
-            <Link to='/login' className='btn btn-light'>
+          <div className='Landing-buttons'>
+            <Link to='/login' className='btn btn-light btn-block'>
               Login
+            </Link>
+            <Link to='/register' className='btn btn-info  btn-block'>
+              Sign Up
             </Link>
           </div>
         </div>

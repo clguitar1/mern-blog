@@ -8,7 +8,7 @@ const PostForm = ({ addPost }) => {
   const [text, setText] = useState('');
 
   return (
-    <div className='PostForm'>
+    <div className='PostForm mb-3'>
       <h3 className='text-info'>Say something...</h3>
 
       <Form

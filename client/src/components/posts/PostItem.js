@@ -14,54 +14,56 @@ const PostItem = ({
   showActions
 }) => {
   return (
-    <div className='PostItem row border border-secondary bg-white p-3 my-3'>
-      <div className='PostItem-avatar col-md-4 text-center'>
-        <Link to={`/profile/${user}`}>
-          <img
-            className='PostItem-avatar__img rounded-circle'
-            src={avatar}
-            alt='avatar'
-          />
-          <h4 className='text-info'>{name}</h4>
-        </Link>
-      </div>
-      <div className='PostItem-content col-md-8'>
-        <p className='my-1'>{text}</p>
-        <p className='post-date'>
-          Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
-        </p>
-        {showActions && (
-          <Fragment>
-            <Button
-              onClick={e => addLike(_id)}
-              color='secondary'
-              className='mr-2'
-            >
-              <i className='fas fa-thumbs-up mr-1'></i>
-              <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
-            </Button>
-            <Button
-              onClick={() => removeLike(_id)}
-              color='secondary'
-              className='mr-2'
-            >
-              <i className='fas fa-thumbs-down mr-1'></i>
-            </Button>
-            <Link to={`/posts/${_id}`} className='btn btn-info mr-2'>
-              Discussion
-              {comments.length > 0 && (
-                <span className='bg-white rounded text-info px-1 ml-2'>
-                  {comments.length}
-                </span>
-              )}
-            </Link>
-            {!auth.loading && user === auth.user._id && (
-              <Button onClick={() => deletePost(_id)} color='danger'>
-                <i className='fas fa-times'></i>
+    <div className='PostItem container'>
+      <div className='row border border-secondary mb-4 p-4 d-flex align-items-center'>
+        <div className='PostItem-avatar col-md-4 text-center'>
+          <Link to={`/profile/${user}`}>
+            <img
+              className='PostItem-avatar__img rounded-circle'
+              src={avatar}
+              alt='avatar'
+            />
+            <h4 className='text-info'>{name}</h4>
+          </Link>
+        </div>
+        <div className='PostItem-content col-md-8'>
+          <p className='my-1'>{text}</p>
+          <p className='post-date'>
+            Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
+          </p>
+          {showActions && (
+            <Fragment>
+              <Button
+                onClick={e => addLike(_id)}
+                color='secondary'
+                className='mr-2'
+              >
+                <i className='fas fa-thumbs-up mr-1'></i>
+                <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
               </Button>
-            )}
-          </Fragment>
-        )}
+              <Button
+                onClick={() => removeLike(_id)}
+                color='secondary'
+                className='mr-2'
+              >
+                <i className='fas fa-thumbs-down mr-1'></i>
+              </Button>
+              <Link to={`/posts/${_id}`} className='btn btn-info mr-2'>
+                Discussion
+                {comments.length > 0 && (
+                  <span className='bg-white rounded text-info px-1 ml-2'>
+                    {comments.length}
+                  </span>
+                )}
+              </Link>
+              {!auth.loading && user === auth.user._id && (
+                <Button onClick={() => deletePost(_id)} color='danger'>
+                  <i className='fas fa-times'></i>
+                </Button>
+              )}
+            </Fragment>
+          )}
+        </div>
       </div>
     </div>
   );

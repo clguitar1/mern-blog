@@ -67,7 +67,7 @@ const NavbarComponent = ({ auth: { isAuthenticated, loading }, logout }) => {
     <div>
       <Navbar className='border-bottom' color='dark' dark expand='md'>
         <NavbarBrand className='ml-4' href='/'>
-          <i className='fas fa-code mr-2'></i>Blog App
+          <i className='fas fa-users mr-2'></i>Blog App
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

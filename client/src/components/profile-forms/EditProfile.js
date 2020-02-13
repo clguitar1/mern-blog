@@ -1,11 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Link, withRouter, Redirect } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   createProfile,
   getCurrentProfile
 } from '../../actions/profile.actions';
+import { Button, Form, FormGroup, Input } from 'reactstrap';
+
 const initialState = {
   username: '',
   bio: ''
@@ -40,38 +42,39 @@ const EditProfile = ({
     createProfile(formData, history, true);
   };
   return (
-    <Fragment>
-      <h1 className='large text-primary'>Edit Your Profile</h1>
+    <div className='EditProfile'>
+      <h1 className='large text-info'>Edit Your Profile</h1>
       <p className='lead'>
-        <i className='fas fa-user' /> Add some changes to your profile
+        <i className='fas fa-user mr-2' /> Add some info to your profile
       </p>
-      <small>* = required field</small>
-      <form className='form' onSubmit={onSubmit}>
-        <div className='form-group'>
-          <input
+      <Form onSubmit={onSubmit}>
+        <FormGroup>
+          <Input
             type='text'
-            placeholder='Username'
             name='username'
+            minLength='6'
             value={username}
             onChange={onChange}
+            placeholder='Username'
           />
-        </div>
-        <div className='form-group'>
-          <textarea
-            placeholder='A short bio of yourself'
+        </FormGroup>
+        <FormGroup>
+          <Input
+            type='textarea'
             name='bio'
+            minLength='6'
             value={bio}
             onChange={onChange}
+            placeholder='A short bio'
           />
-          <small className='form-text'>Tell us a little about yourself</small>
-        </div>
-
-        <input type='submit' className='btn btn-primary my-1' />
+          <small>Tell us a little about yourself</small>
+        </FormGroup>
+        <Button className='btn btn-info my-1'>Submit</Button>
         <Link className='btn btn-light mx-2 my-1' to='/dashboard'>
           Dashboard
         </Link>
-      </form>
-    </Fragment>
+      </Form>
+    </div>
   );
 };
 EditProfile.propTypes = {

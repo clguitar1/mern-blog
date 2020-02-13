@@ -1,0 +1,15 @@
+.body-bg-color {
+  background-color: whitesmoke;
+}
+
+.Landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -57px;
+  height: 100vh;
+}
+
+.Landing-inner {
+  background-color: white;
+}

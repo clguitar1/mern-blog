@@ -8,7 +8,7 @@ const ProfileItem = ({
   }
 }) => {
   return (
-    <div className='ProfileItem border border-secondary bg-light container mb-3'>
+    <div className='ProfileItem border border-secondary bg-light container mb-3 text-center'>
       <div className='d-md-flex justify-content-between p-3'>
         <img src={avatar} alt='avatar' className='rounded-circle' />
         <div className='d-flex flex-column justify-content-center'>

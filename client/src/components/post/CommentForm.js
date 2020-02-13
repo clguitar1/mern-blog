@@ -2,32 +2,33 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addComment } from '../../actions/post.actions';
+import { Button, Form, FormGroup, Input } from 'reactstrap';
+
 const CommentForm = ({ postId, addComment }) => {
   const [text, setText] = useState('');
   return (
-    <div className='post-form'>
-      <div className='bg-primary p'>
-        <h3>Leave a Comment</h3>
+    <div className='CommentForm'>
+      <div className='bg-info p-2 mb-4'>
+        <h3 className='ml-4 text-white'>Leave a Comment</h3>
       </div>
-      <form
-        className='form my-1'
+      <Form
         onSubmit={e => {
           e.preventDefault();
           addComment(postId, { text });
           setText('');
         }}
       >
-        <textarea
-          name='text'
-          cols='30'
-          rows='5'
-          placeholder='Comment the post'
-          value={text}
-          onChange={e => setText(e.target.value)}
-          required
-        />
-        <input type='submit' className='btn btn-dark my-1' value='Submit' />
-      </form>
+        <FormGroup>
+          <Input
+            type='textarea'
+            name='text'
+            placeholder='Leave a comment'
+            value={text}
+            onChange={e => setText(e.target.value)}
+          />
+        </FormGroup>
+        <Button>Submit</Button>
+      </Form>
     </div>
   );
 };
